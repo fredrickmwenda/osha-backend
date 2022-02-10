@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <router-link to="/" class="navbar-brand"
-                        ><b>DW</b>Laundry</router-link
+                        ><b>Osha</b></router-link
                     >
                     <button
                         type="button"
@@ -44,6 +44,12 @@
                                 >Products</router-link
                             >
                         </li>
+
+                        <li>
+                            <router-link :to="{ name: 'products.data' }"
+                                >Products</router-link
+                            >
+                        </li>
                         <li>
                             <router-link :to="{ name: 'expenses.data' }"
                                 >Expenses</router-link
@@ -54,6 +60,17 @@
                                 >Customer</router-link
                             >
                         </li>
+
+                        <li >
+                            <router-link :to="{ name: 'outlets.data' }"
+                                >Outlets</router-link
+                            >
+                        </li>
+                        <li >
+                            <router-link :to="{ name: 'couriers.data' }"
+                                >Couriers</router-link
+                            >
+                         </li>
                         <li class="dropdown">
                             <a
                                 href="javascript:void(0)"

@@ -21,9 +21,9 @@
     export default {
         name: 'EditProduct',
         methods: {
-            //KETIKA TOMBOL UPDATE DITEKAN
+            //WHEN THE UPDATE BUTTON IS PRESSED
             submit() {
-                //MAKA AKAN MENJALAN FUNGSI SUBMIT YANG BERADA DI DALAM FILE FORM.VUE MENGGUNAKAN $REFS
+                //IT WILL THEN RUN THE SUBMIT FUNCTION THAT IS IN THE FORM FILE. VUE USES $REFS
                 this.$refs.formProduct.submit()
             }
         },

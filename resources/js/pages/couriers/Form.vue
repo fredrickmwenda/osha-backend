@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="form-group" :class="{ 'has-error': errors.name }">
-            <label for="">Nama Lengkap</label>
+            <label for="">Full Name</label>
             <input
                 type="text"
                 class="form-control"
@@ -36,7 +36,7 @@
                 class="form-control"
                 v-model="courier.outlet_id"
             >
-                <option value="">Pilih</option>
+                <option value="">Choose</option>
                 <option
                     v-for="(row, index) in outlets.data"
                     :value="row.id"

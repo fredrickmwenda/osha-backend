@@ -82,15 +82,15 @@
                 style="margin-bottom: 10px"
                 @click="addProduct"
             >
-                Tambah
+            Add Product
             </button>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th width="40%">Paket</th>
-                            <th>Berat/Satuan</th>
-                            <th>Harga</th>
+                            <th width="40%">Parcel</th>
+                            <th>Weight/Unit</th>
+                            <th>Price</th>
                             <th>Subtotal</th>
                             <th>Actions</th>
                         </tr>
@@ -154,7 +154,7 @@
         <!-- WHEN THE TRANSACTION IS SUCCESSFUL, THE ALERT IS SHOWED -->
         <div class="col-md-12" v-if="isSuccess">
             <div class="alert alert-success">
-                Transaksi Berhasil, Total Tagihan: Rp {{ total }}
+                Successful Transaction, Total Bill: Ksh {{ total }}
                 <strong
                     ><router-link
                         :to="{

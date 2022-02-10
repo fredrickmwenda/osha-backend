@@ -5,7 +5,7 @@
                 <router-link
                     :to="{ name: 'products.add' }"
                     class="btn btn-primary btn-sm btn-flat"
-                    >Tambah</router-link
+                    >Add New Product</router-link
                 >
                 <div class="pull-right">
                     <input
@@ -57,7 +57,7 @@
                     <div class="col-md-6">
                         <p v-if="products.data">
                             <i class="fa fa-bars"></i>
-                            {{ products.data.length }} item dari
+                            {{ products.data.length }} item from
                             {{ products.meta.total }} total data
                         </p>
                     </div>
@@ -84,11 +84,11 @@ import { mapActions, mapState } from "vuex";
 export default {
     name: "DataCourier",
     created() {
-        this.getProducts(); //MELAKUKAN REQUEST KETIKA COMPONENT DI-LOAD
+        this.getProducts(); //MAKE A REQUEST WHEN THE COMPONENT IS LOADED
     },
     data() {
         return {
-            //FIELDS UNTUK MENGISI HEADER TABLE YANG AKAN DITAMPILKAN
+            //FIELDS TO FILL IN THE HEADER TABLE TO BE DISPLAYED
             fields: [
                 { key: "name", label: "Nama Item" },
                 { key: "unit_type", label: "Tipe" },
@@ -98,12 +98,12 @@ export default {
                 { key: "service", label: "Lama Pengerjaan" },
                 { key: "actions", label: "Aksi" }
             ],
-            //VARIABLE UNTUK FORM SEARCH
+            //VARIABLES FOR FORM SEARCH
             search: ""
         };
     },
     computed: {
-        //ME-LOAD STATE DARI MODULE PRODUCTS
+        //LOAD STATE from MODULE PRODUCTS
         ...mapState("product", {
             products: state => state.products //STATE PRODUCTS
         }),
@@ -112,23 +112,23 @@ export default {
                 return this.$store.state.product.page; //LOAD STATE PAGE
             },
             set(val) {
-                this.$store.commit("product/SET_PAGE", val); //SET STATE PAGE KETIKA VALUE BERUBAH
+                this.$store.commit("product/SET_PAGE", val); //SET STATE PAGE WHEN VALUE CHANGES
             }
         }
     },
     watch: {
-        //KETIKA TERJADI PERUBAHAN VALUE DARI PAGE
+        //WHEN THERE IS A CHANGE IN THE VALUE OF THE PAGE
         page() {
-            this.getProducts(); //AMBIL DATA TERBARU
+            this.getProducts(); //RETRIEVE THE LATEST DATA
         },
-        //KETIKA TERJADI PERUBAHAN VALUE DARI SEARCH
+        //WHEN THERE IS A CHANGE IN THE VALUE OF THE SEARCH
         search() {
-            this.getProducts(this.search); //AMBIL DATA TERBARU BERDASARKAN VALUE SEARC
+            this.getProducts(this.search); //RETRIEVE THE LATEST DATA BASED ON VALUE SEARCH
         }
     },
     methods: {
         ...mapActions("product", ["getProducts", "removeProduct"]), //LOAD ACTIONS DARI MODULE PRODUCT
-        //FUNGSI UNTUK MENG-HANDLE TOMBOL HAPUS PRODUCT
+        //FUNCTION TO HANDLE THE DELETE PRODUCT BUTTON
         deleteProduct(id) {
             this.$swal({
                 title: "Kamu Yakin?",
@@ -140,7 +140,7 @@ export default {
                 confirmButtonText: "Iya, Lanjutkan!"
             }).then(result => {
                 if (result.value) {
-                    this.removeProduct(id); //KETIKA YES MAKA FUNGSI INI AKAN DIJALANKAN
+                    this.removeProduct(id); //WHEN YES, THIS FUNCTION WILL BE EXECUTED.
                 }
             });
         }

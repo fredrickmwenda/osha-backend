@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="panel">
             <div class="panel-heading">
-                <router-link :to="{ name: 'outlets.add' }" class="btn btn-primary btn-sm btn-flat">Tambah</router-link>
+                <router-link :to="{ name: 'outlets.add' }" class="btn btn-primary btn-sm btn-flat">Add New Outlet</router-link>
                 <div class="pull-right">
                     <input type="text" class="form-control" placeholder="Cari..." v-model="search">
                 </div>
@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <p v-if="outlets.data"><i class="fa fa-bars"></i> {{ outlets.data.length }} item dari {{ outlets.meta.total }} total data</p>
+                        <p v-if="outlets.data"><i class="fa fa-bars"></i> {{ outlets.data.length }} item from {{ outlets.meta.total }} total data</p>
                     </div>
                     <div class="col-md-6">
                         <div class="pull-right">

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="form-group" :class="{ 'has-error': errors.name }">
-            <label for="">Nama Item</label>
+            <label for="">Name of Item</label>
             <input
                 type="text"
                 class="form-control"
@@ -11,11 +11,11 @@
             <p class="text-danger" v-if="errors.name">{{ errors.name[0] }}</p>
         </div>
         <div class="form-group" :class="{ 'has-error': errors.unit_type }">
-            <label for="">Tipe</label>
+            <label for="">Type</label>
             <select v-model="product.unit_type" class="form-control">
-                <option value="">Pilih</option>
+                <option value="">Choose</option>
                 <option value="Kilogram">Kilogram</option>
-                <option value="Potong">Potong</option>
+                <option value="Cut">Cut</option>
             </select>
             <p class="text-danger" v-if="errors.unit_type">
                 {{ errors.unit_type[0] }}
@@ -23,13 +23,13 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <!-- KETIKA TOMBOL ADD NEW DITEKAN -->
+                <!-- WHEN THE ADD NEW BUTTON IS PRESSED-->
                 <div
                     class="form-group"
                     :class="{ 'has-error': errors.laundry_type }"
                 >
                     <label for=""
-                        >Jenis Jasa
+                        >Type of Service
                         <sup
                             ><a
                                 @click="showForm = true"
@@ -40,7 +40,7 @@
                         ></label
                     >
                     <select v-model="product.laundry_type" class="form-control">
-                        <option value="">Pilih</option>
+                        <option value="">Choose</option>
                         <option
                             v-for="(row, index) in laundry_types"
                             :key="index"
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <!-- MAKA FORM UNTUK MENAMBAHKAN JENIS LAUNDRY AKAN DITAMPILKAN -->
+            <!-- THEN THE FORM TO ADD LAUNDRY TYPE WILL BE DISPLAYED -->
             <div class="col-md-6" v-if="showForm">
                 <div
                     class="form-group"
@@ -64,7 +64,7 @@
                     <div class="input-group">
                         <input
                             type="text"
-                            placeholder="Cuci Kering + Setrika"
+                            placeholder="Dry Washing + Iron"
                             v-model="laundry_type"
                             class="form-control"
                         />
@@ -81,7 +81,7 @@
                     </p>
                 </div>
             </div>
-            <!-- END FORM ADD JENIS LAUNDRY -->
+            <!-- END FORM ADD KIND LAUNDRY -->
         </div>
 
         <div class="form-group" :class="{ 'has-error': errors.price }">
@@ -95,7 +95,7 @@
                     class="form-group"
                     :class="{ 'has-error': errors.service }"
                 >
-                    <label for="">Lama Pengerjaan</label>
+                    <label for="">Long Workmanship</label>
                     <input
                         type="number"
                         class="form-control"
@@ -111,11 +111,11 @@
                     class="form-group"
                     :class="{ 'has-error': errors.service_type }"
                 >
-                    <label for="">Satuan</label>
+                    <label for="">Unit</label>
                     <select class="form-control" v-model="product.service_type">
-                        <option value="">Pilih</option>
-                        <option value="Hari">Hari</option>
-                        <option value="Jam">Jam</option>
+                        <option value="">Choose</option>
+                        <option value="Day">Day</option>
+                        <option value="Hour">Hour</option>
                     </select>
                     <p class="text-danger" v-if="errors.service_type">
                         {{ errors.service_type[0] }}
